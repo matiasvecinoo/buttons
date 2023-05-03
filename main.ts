@@ -1,18 +1,20 @@
 input.onButtonPressed(Button.A, function () {
-    for (let index = 0; index < 100000000; index++) {
-        music.setVolume(100)
-        music.playMelody("C5 - C5 B C5 A B - ", 260)
+    music.setBuiltInSpeakerEnabled(true)
+    music.setTempo(108)
+    for (let index = 0; index < 3; index++) {
+        music.playTone(294, music.beat(BeatFraction.Whole) / 3)
     }
-})
-input.onButtonPressed(Button.AB, function () {
-    for (let index = 0; index < 100000000; index++) {
-        music.setVolume(100)
-        music.playMelody("G E A G - A E D ", 260)
+    music.playTone(392, music.beat(BeatFraction.Double))
+    music.playTone(587, music.beat(BeatFraction.Double))
+    for (let index = 0; index < 2; index++) {
+        music.playTone(262, music.beat(BeatFraction.Whole) / 3)
+        music.playTone(494, music.beat(BeatFraction.Whole) / 3)
+        music.playTone(440, music.beat(BeatFraction.Whole) / 3)
+        music.playTone(784, music.beat(BeatFraction.Double))
+        music.playTone(587, music.beat(BeatFraction.Whole))
     }
-})
-input.onButtonPressed(Button.B, function () {
-    for (let index = 0; index < 100000000; index++) {
-        music.setVolume(100)
-        music.playMelody("A D E F D G - F ", 260)
-    }
+    music.playTone(262, music.beat(BeatFraction.Whole) / 3)
+    music.playTone(494, music.beat(BeatFraction.Whole) / 3)
+    music.playTone(262, music.beat(BeatFraction.Whole) / 3)
+    music.playTone(440, music.beat(BeatFraction.Whole) / 3)
 })
